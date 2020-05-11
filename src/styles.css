@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "circular-std";
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+  body{
+    margin: 0;
+    font-family: "CircularStd","Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    text-align: left;
+    background-color: white;
+  }

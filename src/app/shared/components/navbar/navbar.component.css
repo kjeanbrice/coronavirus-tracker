@@ -1,0 +1,88 @@
+#nav-section{
+    position:sticky;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 90;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none; 
+}
+.nav-bar{
+    display:flex;
+    width:100%;
+    color: rgb(79, 92, 101);
+}
+
+.nav-bar > div {
+    display:flex;
+    align-items:center;
+    
+}
+
+.nav-bar > div{
+    flex-basis: 50%;
+}
+
+.nav-bar-right{
+    justify-content: flex-end;
+}
+
+
+
+.nav-bar-right > div{
+    margin-right: 5%;
+    cursor:pointer;
+    font-size: 1.2rem;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+
+.option{
+    -webkit-transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+
+.nav-bar-right > div:first-of-type > span:hover{
+    color: rgb(34, 34, 34);
+}
+
+.chat:hover{
+    color:rgba(203, 15, 81, 0.80);
+}
+
+
+.nav-bar-right > div:last-child{
+    margin-right: 0;
+    color:rgb(203,15,82);
+}
+/*Nav Section End*/
+
+#nav-section{
+    padding: 1% 5%;
+}
+
+.avatar-brand{
+    height:2.7rem;
+    width: 2.7rem;
+    margin-right:10px;
+}
+
+.nav-bar-left > span{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.nav-bar-left > span:first-of-type{
+    text-transform: uppercase;
+    margin-right:2px;
+}
+
+.nav-bar-left > span:last-child{
+    color:rgb(203,15,82);
+    margin-right:0px;
+    
+}

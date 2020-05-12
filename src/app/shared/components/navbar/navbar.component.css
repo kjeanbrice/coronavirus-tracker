@@ -86,3 +86,56 @@
     margin-right:0px;
     
 }
+
+
+
+@media only screen and (max-width: 1200px){
+    .nav-bar-left > span{
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+ 
+    .nav-bar-right > div{
+        margin-right: 5%;
+        cursor:pointer;
+        font-size: 1.2rem;
+        letter-spacing: 1.3px;
+        font-weight: 500;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 992px) { 
+    .nav-bar-left > span{
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+ 
+    .nav-bar-right > div{
+        margin-right: 5%;
+        cursor:pointer;
+        font-size: 1.1rem;
+        letter-spacing: 1.3px;
+        font-weight: 500;
+    }
+   
+}
+
+/*-----responsive-----*/
+@media only screen and (max-width: 768px){
+  
+    .nav-bar-left > span{
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+ 
+    .nav-bar-right > div{
+        margin-right: 5%;
+        cursor:pointer;
+        font-size: .90rem;
+        letter-spacing: 1.3px;
+        font-weight: 500;
+    }
+ }

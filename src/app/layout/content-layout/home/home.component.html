@@ -7,7 +7,7 @@
                     <span>Coronavirus Tracker</span>
                 </div>
                 <div>
-                    <span class="landing-des">As the virus that causes COVID-19 spreads worldwide, you can track the number of
+                    <span class="landing-des">As COVID-19 spreads worldwide, you can track the number of
                         confirmed cases,
                         recovered patients, and death tolls due to coronavirus both globally and locally.</span>
                     <div class="landing-button-area">
@@ -21,5 +21,37 @@
                 <img class="landing-image" alt="Image not available" src="./assets/images/sd.svg" />
             </div>
         </div>
+        <div class="card-section">
+            <div class="card card-green">
+                <div class="card-contents">
+                    <span class="title-gray">Infected</span>
+                    <span class="title-black" [countUp] = "defaultData === undefined ? 0 : defaultData.confirmed.value">0</span>
+                    <span class = "title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                    <span class= "title-black">Number of active cases of COVID-19</span>
+                </div>
+            </div>
+
+            <div class="card card-purple">
+                <div class="card-contents">
+                    <span class="title-gray" >Recovered</span>
+                    <span class="title-black" [countUp] = "defaultData === undefined ? 0 : defaultData.recovered.value">0</span>
+                    <span class = "title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                    <span class= "title-black">Number of recoveries from COVID-19</span>
+                </div>
+            </div>
+
+
+            <div class="card card-red">
+                <div class="card-contents">
+                    <span class="title-gray">Deaths</span>
+                    <span class="title-black" [countUp] = "defaultData === undefined ? 0 : defaultData.deaths.value">0</span>
+                    <span class = "title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                    <span class= "title-black">Number of deaths caused by COVID-19</span>
+                </div>
+            </div>
+        </div>
+
+
+        
     </div>
 </div>

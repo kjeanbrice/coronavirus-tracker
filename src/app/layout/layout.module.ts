@@ -4,13 +4,15 @@ import {RouterModule} from '@angular/router';
 import {LayoutRoutingModule} from './layout-routing.module';
 import {HomeComponent} from './content-layout/home/home.component';
 import {SharedModule} from '../shared/shared.module';
+import {CountUpModule} from 'ngx-countup';
 
 @NgModule({
     imports: [
         CommonModule,
         LayoutRoutingModule,
         RouterModule,
-        SharedModule
+        SharedModule,
+        CountUpModule
     ],
     declarations: [HomeComponent],
     providers: [],

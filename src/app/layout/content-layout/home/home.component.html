@@ -22,21 +22,23 @@
             </div>
         </div>
         <div class="card-section">
-            <div class="card card-green">
+            <div class="card card-purple">
                 <div class="card-contents">
                     <span class="title-gray">Infected</span>
-                    <span class="title-black" [countUp] = "defaultData === undefined ? 0 : defaultData.confirmed.value">0</span>
-                    <span class = "title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
-                    <span class= "title-black">Number of active cases of COVID-19</span>
+                    <span class="title-black"
+                        [countUp]="defaultData === undefined ? 0 : defaultData.confirmed.value">0</span>
+                    <span class="title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                    <span class="title-black">Number of active cases of COVID-19</span>
                 </div>
             </div>
 
-            <div class="card card-purple">
+            <div class="card card-green">
                 <div class="card-contents">
-                    <span class="title-gray" >Recovered</span>
-                    <span class="title-black" [countUp] = "defaultData === undefined ? 0 : defaultData.recovered.value">0</span>
-                    <span class = "title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
-                    <span class= "title-black">Number of recoveries from COVID-19</span>
+                    <span class="title-gray">Recovered</span>
+                    <span class="title-black"
+                        [countUp]="defaultData === undefined ? 0 : defaultData.recovered.value">0</span>
+                    <span class="title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                    <span class="title-black">Number of recoveries from COVID-19</span>
                 </div>
             </div>
 
@@ -44,14 +46,40 @@
             <div class="card card-red">
                 <div class="card-contents">
                     <span class="title-gray">Deaths</span>
-                    <span class="title-black" [countUp] = "defaultData === undefined ? 0 : defaultData.deaths.value">0</span>
-                    <span class = "title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
-                    <span class= "title-black">Number of deaths caused by COVID-19</span>
+                    <span class="title-black"
+                        [countUp]="defaultData === undefined ? 0 : defaultData.deaths.value">0</span>
+                    <span class="title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                    <span class="title-black">Number of deaths caused by COVID-19</span>
                 </div>
             </div>
         </div>
 
+        <div class="map-section">
+            <div class="countries">
+                <select id="countries">
+                <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>   
+                </select>
+            </div>
+            <div class="canvas">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
 
+
+        <footer class= "footer-section">
+            <div class = "footer-left">
+                <span>&copy; 2020 COVID-19 Tracker</span>
+            </div>
+            <div class = "footer-right">
+                <a href="javascript:void(0);">Home</a>
+                <a href="javascript:void(0);">Resources</a>
+                <a href="javascript:void(0);">Terms</a>
+                <a href="javascript:void(0);">Privacy</a>
         
+            </div>
+        </footer>
+
+
+
     </div>
 </div>

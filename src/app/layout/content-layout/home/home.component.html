@@ -26,8 +26,8 @@
                 <div class="card-contents">
                     <span class="title-gray">Infected</span>
                     <span class="title-black"
-                        [countUp]="defaultData === undefined ? 0 : defaultData.confirmed.value">0</span>
-                    <span class="title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                        [countUp]="dailyStatsData === undefined ? 0 : dailyStatsData.confirmed.value">0</span>
+                    <span class="title-gray">{{dailyStatsData === undefined ? 0 : dailyStatsData.lastUpdate}}</span>
                     <span class="title-black">Number of active cases of COVID-19</span>
                 </div>
             </div>
@@ -36,8 +36,8 @@
                 <div class="card-contents">
                     <span class="title-gray">Recovered</span>
                     <span class="title-black"
-                        [countUp]="defaultData === undefined ? 0 : defaultData.recovered.value">0</span>
-                    <span class="title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                        [countUp]="dailyStatsData === undefined ? 0 : dailyStatsData.recovered.value">0</span>
+                    <span class="title-gray">{{dailyStatsData === undefined ? 0 : dailyStatsData.lastUpdate}}</span>
                     <span class="title-black">Number of recoveries from COVID-19</span>
                 </div>
             </div>
@@ -47,8 +47,8 @@
                 <div class="card-contents">
                     <span class="title-gray">Deaths</span>
                     <span class="title-black"
-                        [countUp]="defaultData === undefined ? 0 : defaultData.deaths.value">0</span>
-                    <span class="title-gray">{{defaultData === undefined ? 0 : defaultData.lastUpdate}}</span>
+                        [countUp]="dailyStatsData=== undefined ? 0 : dailyStatsData.deaths.value">0</span>
+                    <span class="title-gray">{{dailyStatsData === undefined ? 0 : dailyStatsData.lastUpdate}}</span>
                     <span class="title-black">Number of deaths caused by COVID-19</span>
                 </div>
             </div>

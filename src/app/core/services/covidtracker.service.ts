@@ -27,7 +27,7 @@ export class CovidTrackerService{
         }
     }
 
-    async fetchData(): Promise<any> {
+    async fetchGlobalData(): Promise<any> {
         try{
             const res = await this.Axios.get(this.DEFAULT_URL);
             return res.data;

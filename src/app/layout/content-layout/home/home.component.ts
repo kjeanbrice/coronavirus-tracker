@@ -10,13 +10,13 @@ import easydropdown from 'easydropdown';
 })
 export class HomeComponent implements OnInit, AfterViewInit, AfterViewChecked {
 
-    defaultData: any;
+    dailyStatsData: any;
     dailyData: any;
     set: Set<string>;
     map: Map<string, number[]>;
     c: Chart;
     edd: any;
-    countriesMap: Map<string, {}>;
+    countriesMap: Map<string, any>;
     countries: string[];
 
     constructor(private covidTrackerService: CovidTrackerService) {
@@ -36,39 +36,31 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterViewChecked {
             },
             callbacks: {
                 onSelect: value => {
-                    this.onSelectCountry(value);
+                    this.selectCountry(value);
                 }
             }
         });
-        //this.edd.refresh();
     }
 
     ngAfterViewChecked(): void {
-        //this.edd.refresh();
     }
 
     ngOnInit(): void {
-        this.set.add('getDefaultData');
-        this.getDefaultData();
+        this.selectCountry('Global');
 
-        this.set.add('getDailyData');
-        this.getDailyData();
+        this.set.add('getGlobalDailyData');
+        this.getGlobalDailyData();
 
         this.set.add('getAllCountries');
         this.getAllCountries();
     }
 
-    async getDefaultData(): Promise<any> {
-        try {
-            this.defaultData = await this.covidTrackerService.fetchData();
-            this.defaultData.lastUpdate = new Date(this.defaultData.lastUpdate).toLocaleString();
-            this.set.delete('getDefaultData');
-        } catch (err) {
-            console.log('Error retrieving default data');
-        }
+    setDailyStatsData(data: any) {
+            this.dailyStatsData = data;
+            this.dailyStatsData.lastUpdate = new Date(this.dailyStatsData.lastUpdate).toLocaleString();
     }
 
-    async getDailyData(): Promise<any> {
+    async getGlobalDailyData(): Promise<any> {
         try {
             this.dailyData = await this.covidTrackerService.getDailyData();
             // tslint:disable-next-line:prefer-for-of
@@ -79,7 +71,7 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterViewChecked {
                 this.map.get('dates').push(item.reportDate);
             }
             this.loadGlobalLineGraph();
-            this.set.delete('getDailyData');
+            this.set.delete('getGlobalDailyData');
         } catch (err) {
             console.log(err);
         }
@@ -103,18 +95,16 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterViewChecked {
                 const item = data[i];
                 if (this.countriesMap.has(data[i].name)) {
                     const countryData = await this.getCountryData(data[i].name);
-                    if (countryData === undefined){
-                        this.countriesMap.set(data[i].name, {
-                            confirmed: {value: 0},
-                            recovered: {value: 0},
-                            deaths: {value: 0}
-                        });
+                    if (countryData === null){
+                        this.countriesMap.delete(data[i].name);
                     }else{
                         this.countriesMap.set(data[i].name, countryData);
                     }
                 }
             }
-            this.set.delete('getDailyData');
+
+            this.countries = Array.from(this.countriesMap.keys());
+            this.set.delete('getAllCountries');
         } catch (err) {
             console.log(err);
         }
@@ -125,7 +115,7 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterViewChecked {
             const data = await this.covidTrackerService.getCountryData(country);
             return data;
         }catch (err){
-            console.log(err);
+            return null;
         }
     }
 
@@ -170,7 +160,7 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterViewChecked {
         if (this.c != null){
             this.c.destroy();
         }
-        
+
         this.c = new Chart(canvas, {
             // The type of chart we want to create
             type: 'bar',
@@ -205,11 +195,27 @@ export class HomeComponent implements OnInit, AfterViewInit, AfterViewChecked {
         });
     }
 
-    onSelectCountry(country: string) {
+    async selectCountry(country: string) {
         if (country === 'Global'){
-            this.loadGlobalLineGraph();
+            const data = await this.covidTrackerService.fetchGlobalData();
+            if (data !== null){
+                this.loadGlobalLineGraph();
+                this.setDailyStatsData(data);
+            }
         }else{
-            this.loadBarGraph(this.countriesMap.get(country), country);
+            const data = await this.getCountryData(country);
+            if (this.countriesMap.has(country)){
+                const countryData = this.countriesMap.get(country);
+                const a = new Date(data.lastUpdate).getUTCSeconds();
+                const b = new Date(countryData.lastUpdate).getUTCSeconds();
+                if (a !== b){
+                    this.countriesMap.set(country, data);
+                }
+            }
+            if (data !== null){
+                this.loadBarGraph(data, country);
+                this.setDailyStatsData(data);
+            }
         }
     }
 }

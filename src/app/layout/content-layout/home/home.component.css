@@ -194,7 +194,7 @@
 
   .footer-left{
     color: rgb(34, 34, 34);
-    font-weight:400;
+    font-weight:500;
     font-size:1.2rem;
     letter-spacing: 1.1px;
   }
@@ -203,7 +203,7 @@
       margin-right: 20px;
       color: rgb(34, 34, 34);
       text-decoration: none;
-      font-weight:400;
+      font-weight:500;
       letter-spacing: 1.1px;
       font-size:1.2rem;
   }

@@ -12,7 +12,7 @@
                         recovered patients, and death tolls due to coronavirus both globally and locally.</span>
                     <div class="landing-button-area">
                         <div class="button-container top-button">
-                            <span class="button-text-size">Get Started</span>
+                            <a id ="getstarted" href="#card-section" class="button-text-size">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                 <img class="landing-image" alt="Image not available" src="./assets/images/sd.svg" />
             </div>
         </div>
-        <div class="card-section">
+        <div class="card-section" id="card-section">
             <div class="card card-purple">
                 <div class="card-contents">
                     <span class="title-gray">Infected</span>
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div class="map-section">
+        <div id = "map-section" class="map-section" >
             <div class="countries">
                 <select id="countries">
                 <option *ngFor="let country of countries" value="{{country}}">{{country}}</option>   
@@ -78,8 +78,5 @@
         
             </div>
         </footer>
-
-
-
     </div>
 </div>

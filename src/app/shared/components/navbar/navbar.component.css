@@ -46,7 +46,10 @@
     transition: color .3s ease-in-out;
 }
 
-.nav-bar-right > div:first-of-type > span:hover{
+#btn-tracker{
+    color: rgb(79, 92, 101);
+}
+.nav-bar-right > div:first-of-type > #btn-tracker:hover{
     color: rgb(34, 34, 34);
 }
 

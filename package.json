@@ -1,5 +1,5 @@
 {
-  "name": "convidtracker",
+  "name": "covidtracker",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,6 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "server": "cd backend && node server",
+    "runclient": "ng serve -o",
     "heroku-postbuild": "ng build --aot --prod"
   },
   "private": true,
@@ -22,9 +24,10 @@
     "@angular/router": "~9.1.1",
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
-    "circular-std": "^1.0.4",
     "easydropdown": "^4.2.0",
+    "express": "^4.17.1",
     "ngx-countup": "^7.3.0",
+    "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

@@ -351,3 +351,52 @@ html {
 .edd-body-scrollable.edd-body-at-bottom .edd-gradient-bottom {
     opacity: 0;
 }
+
+
+/*Responsive*/
+@media only screen and (max-width: 2100px){
+    html{
+      font-size: 30px !important;
+  }
+  
+  }
+  
+  @media only screen and (max-width: 1800px){
+    html{
+      font-size: 30px !important;
+  }
+  
+  }
+  
+  @media only screen and (max-width: 1500px){
+      html{
+        font-size: 30px !important;
+    }
+  }
+  
+  @media only screen and (max-width: 1200px){
+    html{
+        font-size: 30px !important;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 992px) { 
+    html{
+        font-size: 30px !important;
+    } 
+  }
+  
+  /*-----responsive-----*/
+  @media only screen and (max-width: 768px){
+    html{
+      font-size: 30px !important;
+    }
+   }
+  
+  
+   @media only screen and (max-width: 502px){
+     html{
+       font-size:16px !important;
+     }
+  }

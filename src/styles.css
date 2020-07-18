@@ -356,47 +356,47 @@ html {
 /*Responsive*/
 @media only screen and (max-width: 2100px){
     html{
-      font-size: 30px !important;
+      font-size: 19px !important;
   }
   
   }
   
   @media only screen and (max-width: 1800px){
     html{
-      font-size: 30px !important;
+      font-size: 18px !important;
   }
   
   }
   
   @media only screen and (max-width: 1500px){
       html{
-        font-size: 30px !important;
+        font-size: 17px !important;
     }
   }
   
   @media only screen and (max-width: 1200px){
     html{
-        font-size: 30px !important;
+        font-size: 16px !important;
     }
   }
   
   
   @media only screen and (max-width: 992px) { 
     html{
-        font-size: 30px !important;
+        font-size: 15.5px !important;
     } 
   }
   
   /*-----responsive-----*/
   @media only screen and (max-width: 768px){
     html{
-      font-size: 30px !important;
+      font-size: 15px !important;
     }
    }
   
   
    @media only screen and (max-width: 502px){
      html{
-       font-size:16px !important;
+       font-size:10.5px !important;
      }
   }
